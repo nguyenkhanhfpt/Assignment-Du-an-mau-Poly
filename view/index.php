@@ -78,7 +78,12 @@
         $view_name = 'logIn.php';
     }
 
-    else if(isset($_POST['btn-pass'])){
+    else if(array_key_exists('btn-pass', $_REQUEST)){
+        $view_name = 'forgetPass.php';
+    }
+
+    else if(isset($_POST['btn-forgetPass'])){
+        $MESSAGE = forgetPass($ma_kh,$email);
         $view_name = 'forgetPass.php';
     }
 

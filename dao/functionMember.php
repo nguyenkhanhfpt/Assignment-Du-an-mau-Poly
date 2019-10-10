@@ -141,6 +141,19 @@
         unset($_SESSION['id']);
     }
 
+    function forgetPass($ma_kh,$email){
+        global $conn;
+        $select = "SELECT * FROM khach_hang WHERE ma_kh = '$ma_kh' AND email = '$email'";
+        $member = $conn->query($select);
+        $peopleLogin =  $member->fetch();
+
+        if (is_array($peopleLogin)) {
+            return 'Mật khẩu của bạn là: ' .$peopleLogin['mat_khau'];
+        } else {
+            return 'Đăng nhập thất bại!';
+        }
+    }
+
     function exportExcelMember(){
         $objExcel = new PHPExcel;
         $objExcel->setActiveSheetIndex(0);

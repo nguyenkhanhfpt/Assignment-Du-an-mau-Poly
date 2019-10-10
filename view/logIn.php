@@ -16,5 +16,6 @@
         <input type="checkbox"> Lưu tài khoản
     </div>
     <input type="submit" value="Đăng nhập" name="btn-login" class="btn btn-primary btn-block mt-3">
-    <input type="button" name="btn-pass" class="btn btn-primary btn-block" value="Quên mật khẩu">
+    <a href="?btn-pass" class="btn btn-primary btn-block" >Quên mật khẩu</a>
+    
 </form>

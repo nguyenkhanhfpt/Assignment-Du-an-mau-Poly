@@ -2,7 +2,7 @@
     <h2>Quên mật khẩu</h2>
     <?php
         if(strlen($MESSAGE)){
-            echo "<h6 class='alert alert-warning'>$MESSAGE</h6>";
+            echo "<h6 class='alert alert-warning my-3'>$MESSAGE</h6>";
         }
     ?>
     <div class="form-group">
