@@ -65,6 +65,10 @@
         $hinh_kh = 'user.png';
         $vai_tro = 0;
         addNewMember($ma_kh, $mat_khau , $ho_ten, $email, $hinh_kh, $so_dt, $dia_chi, $vai_tro);
+
+        $_SESSION['name'] = $ho_ten;
+        $_SESSION['id'] = $ma_kh;
+
         $view_name = 'signUp.php';
         $MESSAGE = "Đăng ký thành công !";
     }
