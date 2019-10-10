@@ -103,7 +103,7 @@
     <div class="row">
         <section class="col-md-5 text-center">
             <div class="avatar mt-5 mb-1">
-                <img src="<?=$IMG_URL?>/<?=$user['hinh_kh']?>" height="200px" width="200px" class="p-1 border rounded-circle">
+                <a href="<?=$IMG_URL?>/<?=$user['hinh_kh']?>" target="_bank"><img src="<?=$IMG_URL?>/<?=$user['hinh_kh']?>" height="200px" width="200px" class="p-1 border rounded-circle"></a>
             </div>
 
             <a id="changeImg" class="text-primary">Thay đổi ảnh đại diện</a>
