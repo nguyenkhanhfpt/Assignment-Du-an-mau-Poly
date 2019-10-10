@@ -1,4 +1,4 @@
-<form action="index.php" method="POST" class="mx-auto container">
+<form action="index.php" method="POST" class="mx-auto container w-50">
         <h2>Đăng ký</h2>
         <?php if($MESSAGE) : ?>
             <div class="alert alert-success">
@@ -35,6 +35,6 @@
                 <input type="checkbox" name="" id=""> Lưu tài khoản
             </label>
         </div>
+
         <input type="submit" name="btn-signup" class="btn btn-primary btn-block" value="Đăng ký">
-         
     </form>

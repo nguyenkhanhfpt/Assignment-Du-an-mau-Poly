@@ -78,6 +78,10 @@
         $view_name = 'logIn.php';
     }
 
+    else if(isset($_POST['btn-pass'])){
+        $view_name = 'forgetPass.php';
+    }
+
     else if(array_key_exists('logOut', $_REQUEST)){
         logOut();
         header("Location: $VIEW_URL");
