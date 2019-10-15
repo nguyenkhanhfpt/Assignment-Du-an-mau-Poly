@@ -4,7 +4,8 @@
     function addNewMember($ma_kh, $mat_khau, $ho_ten, $email, $hinh_kh, $so_dt, $dia_chi, $vai_tro)
     {
         global $conn;
-        $insert = "INSERT INTO khach_hang VALUES('$ma_kh', '$mat_khau', '$ho_ten', '$email', '$hinh_kh', '$so_dt', '$dia_chi', '$vai_tro')";
+        $hash_pass = password_hash("$mat_khau", PASSWORD_BCRYPT);
+        $insert = "INSERT INTO khach_hang VALUES('$ma_kh', '$hash_pass', '$ho_ten', '$email', '$hinh_kh', '$so_dt', '$dia_chi', '$vai_tro')";
         $conn->exec($insert);
     }
 
@@ -92,14 +93,15 @@
         global $conn;
         $pass = selectPassMember($ma_kh);
 
-        if ($pass == $mat_khau) {
+        if (password_verify("$mat_khau", $pass)) {
+            $new_hash_pass = password_hash("$mat_khau_moi", PASSWORD_BCRYPT);
             $update = "UPDATE khach_hang 
-                SET mat_khau = '$mat_khau_moi' 
+                SET mat_khau = '$new_hash_pass' 
                 WHERE ma_kh = '$ma_kh'";
             $conn->exec($update);
             return "Đổi thành công!";
         } else {
-            return  "Mật khẩu không đúng!";
+            return  "Mật khẩu cũ không đúng!";
         }
     }
 
@@ -107,7 +109,8 @@
     {
         global $conn;
 
-        $update = "UPDATE khach_hang SET mat_khau = '$mat_khau' WHERE ma_kh = '$ma_kh'";
+        $hash_pass = password_hash("$mat_khau", PASSWORD_BCRYPT);
+        $update = "UPDATE khach_hang SET mat_khau = '$hash_pass' WHERE ma_kh = '$ma_kh'";
         $conn->exec($update);
     }
 
@@ -122,15 +125,17 @@
     function checkLogin($ma_kh, $mat_khau)
     {
         global $conn;
-        $select = "SELECT * FROM khach_hang WHERE ma_kh = '$ma_kh' AND mat_khau = '$mat_khau'";
-        $member = $conn->query($select);
-        $peopleLogin =  $member->fetch();
 
-        if (is_array($peopleLogin)) {
-            $_SESSION['name'] = $peopleLogin['ho_ten'];
-            $_SESSION['id'] = $peopleLogin['ma_kh'];
+        $sql = "SELECT * FROM khach_hang WHERE ma_kh = '$ma_kh'";
+        $table = $conn->query($sql);
+        $user = $table->fetch();
+
+        if(password_verify("$mat_khau", $user['mat_khau'])){
+            $_SESSION['name'] = $user['ho_ten'];
+            $_SESSION['id'] = $user['ma_kh'];
             return 'Đăng nhập thành công!';
-        } else {
+        }
+        else{
             return 'Đăng nhập thất bại!';
         }
     }
@@ -148,7 +153,13 @@
         $peopleLogin =  $member->fetch();
 
         if (is_array($peopleLogin)) {
-            return 'Mật khẩu của bạn là: ' .$peopleLogin['mat_khau'];
+            $pass_random = mt_rand(10000, 99999);
+            $hash_pass = password_hash("$pass_random", PASSWORD_BCRYPT);
+
+            $update = "UPDATE khach_hang SET mat_khau = '$hash_pass' WHERE ma_kh = '$ma_kh'";
+            $conn->exec($update);
+
+            return 'Mật khẩu mới của bạn là: ' .$pass_random;
         } else {
             return 'Đăng nhập thất bại!';
         }
