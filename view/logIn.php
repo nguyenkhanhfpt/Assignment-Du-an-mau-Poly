@@ -7,10 +7,10 @@
         }
     ?>
     <div class="form-group">
-        <input type="text" class="form-control" placeholder="Tên đăng nhập" name="ma_kh">
+        <input type="text" class="form-control" placeholder="Tên đăng nhập" name="ma_kh" required >
     </div>
     <div class="form-group">
-        <input type="password" class="form-control" placeholder="Mật khẩu" name="mat_khau">
+        <input type="password" class="form-control" placeholder="Mật khẩu" name="mat_khau" required>
     </div>
     <div class="checkbox">
         <input type="checkbox"> Lưu tài khoản
