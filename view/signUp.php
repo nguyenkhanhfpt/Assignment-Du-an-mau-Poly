@@ -1,4 +1,4 @@
-<form action="index.php" method="POST" class="mx-auto container w-50">
+<form action="index.php" method="POST" name="form" onsubmit="return checkSignUp()" class="mx-auto container w-50">
         <h2>Đăng ký</h2>
         <?php if($MESSAGE) : ?>
             <div class="alert alert-success">
@@ -40,5 +40,13 @@
     </form>
 
 <script>
-    
+    function checkSignUp(){
+        var so_dt = document.forms['form']['so_dt'].value;
+
+        if(so_dt.length > 11 || so_dt.length < 10){
+            alert('Số điện thoại không hợp lệ!');
+            return false;
+        }
+    }
+
 </script>
