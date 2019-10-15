@@ -125,6 +125,13 @@
     function checkLogin($ma_kh, $mat_khau)
     {
         global $conn;
+        
+        if(empty($ma_kh)){
+            return 'Tên đăng nhập không được để trống!';
+        }
+        if(empty($mat_khau)){
+            return 'Mật khẩu không được để trống!';
+        }
 
         $sql = "SELECT * FROM khach_hang WHERE ma_kh = '$ma_kh'";
         $table = $conn->query($sql);
