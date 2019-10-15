@@ -1,5 +1,5 @@
 
-<form action="index.php" method="post" class="mx-auto  w-50">
+<form action="index.php" method="post" name="form" onsubmit="return checkLogIn()" class="mx-auto  w-50">
     <h2>Đăng nhập</h2>
     <?php
         if(strlen($MESSAGE)){
@@ -17,5 +17,21 @@
     </div>
     <input type="submit" value="Đăng nhập" name="btn-login" class="btn btn-primary btn-block mt-3">
     <a href="?btn-pass" class="btn btn-primary btn-block" >Quên mật khẩu</a>
-    
 </form>
+
+<script>
+    function checkLogIn(){
+        var ma_kh = document.forms["form"]["ma_kh"].value;
+        var mat_khau = document.forms["form"]["mat_khau"].value;
+
+        if(ma_kh == ''){
+            alert('Tên đăng nhập không được để trống!');
+            return false;
+        }
+        
+        if(mat_khau == ''){
+            alert('Mật khẩu không được để trống!');
+            return false;
+        }
+    }
+</script>
