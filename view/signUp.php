@@ -8,27 +8,27 @@
 
         <div class="form-group">
             <label for="">Tên đăng nhập</label>
-            <input type="text" class="form-control" placeholder="User name" name="ma_kh">
+            <input type="text" class="form-control" placeholder="User name" name="ma_kh" required>
         </div>
         <div class="form-group">
             <label for="">Họ và tên</label>
-            <input type="text" class="form-control" placeholder="Full name" name="ho_ten">
+            <input type="text" class="form-control" placeholder="Full name" name="ho_ten" required>
         </div>
         <div class="form-group">
             <label for="">Email</label>
-            <input type="email" class="form-control" placeholder="Email" name="email">
+            <input type="email" class="form-control" placeholder="Email" name="email" required>
         </div>
         <div class="form-group">
             <label for="">Số điện thoại</label>
-            <input type="tel" class="form-control" placeholder="Phone number" name="so_dt">
+            <input type="tel" class="form-control" placeholder="Phone number" name="so_dt" required>
         </div>
         <div class="form-group">
             <label for="">Địa chỉ</label>
-            <input type="text" class="form-control" placeholder="Address" name="dia_chi">
+            <input type="text" class="form-control" placeholder="Address" name="dia_chi" required>
         </div>
         <div class="form-group">
             <label for="">Mật khẩu</label>
-            <input type="password" class="form-control" placeholder="Password" name="mat_khau">
+            <input type="password" class="form-control" placeholder="Password" name="mat_khau" required>
         </div>
         <div class="checkbox">
             <label for="">
@@ -36,5 +36,5 @@
             </label>
         </div>
 
-        <input type="submit" name="btn-signup" class="btn btn-primary btn-block" value="Đăng ký">
+        <input type="submit" name="btn-signup" class="btn btn-primary btn-block" value="Đăng ký" required>
     </form>
