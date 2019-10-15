@@ -38,3 +38,7 @@
 
         <input type="submit" name="btn-signup" class="btn btn-primary btn-block" value="Đăng ký" required>
     </form>
+
+<script>
+    
+</script>
