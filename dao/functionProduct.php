@@ -67,8 +67,11 @@
     {
         global $conn;
         $titleProductFormat = ucfirst($titleProduct);
+        $productFind = '%' .$titleProductFormat. '%';
+
+        
         $select = "SELECT * FROM loai AS A INNER JOIN hang_hoa AS B ON A.ma_loai = B.ma_loai 
-            WHERE ten_loai LIKE '$titleProductFormat%' OR ten_hh LIKE '$titleProductFormat%'";
+            WHERE ten_loai LIKE '$productFind' OR ten_hh LIKE '$productFind'";
 
         return $conn->query($select);
     }
