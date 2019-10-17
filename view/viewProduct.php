@@ -1,5 +1,6 @@
 <?php
     $product = selectProductsId($ma_hh);
+    $sameKind = selectProductsSameKind($ma_hh);
     $comments = selectComment($ma_hh);
 ?>
 
@@ -23,7 +24,7 @@
                         <input type="submit" value="Mua hàng" name="addCart" class="btn btn-primary">
                     </form>
                     <hr>
-                    <h2><?=$product['don_gia']?> đ</h2>
+                    <h2><?=$product['don_gia']?> $</h2>
                     <p>Trạng thái: Còn hàng</p>
                 </div>
             </div>
@@ -62,19 +63,18 @@
 
 <div class="container border shadow-sm rounded p-4">
     <h3 class="mb-4">Sản phẩm cùng loại</h3>
-    <a href="" class="d-flex mb-3 text-decoration-none">
-        <img src="<?=$IMG_URL?>/05.jpg" class="rounded" width="80px" height="auto">
-        <p class="ml-3">Nước giải khát hương cam Fanta lon 250ml 
-            <br>
-            <span class="font-weight-bold">50 $</span>
-        </p>
-    </a>
-    <a href="" class="d-flex mb-3 text-decoration-none">
-        <img src="<?=$IMG_URL?>/05.jpg" alt="" width="80px" height="auto">
-        <p class="ml-3">Nước giải khát hương cam Fanta lon 250ml 
-            <br>
-            <span class="font-weight-bold">50 $</span>
-        </p>
-    </a>
+    <?php if(isset($sameKind)) : ?>
+        <?php foreach($sameKind as $product) :?>
+            <a href="" class="d-flex mb-3 text-decoration-none">
+                <img src="<?=$IMG_URL?>/<?=$product['hinh']?>" class="rounded" width="80px" height="auto">
+                <p class="ml-3"><?=$product['ten_hh']?> 
+                    <br>
+                    <span class="font-weight-bold"><?=$product['don_gia']?> $</span>
+                </p>
+            </a>
+        <?php endforeach ?>
+    <?php else : ?>
+        <p>Không có phản phẩm nào</p>
+    <?php endif ?>
     
 </div>

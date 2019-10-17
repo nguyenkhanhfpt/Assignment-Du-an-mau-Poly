@@ -21,7 +21,16 @@
         global $conn;
         $select = "SELECT * FROM hang_hoa WHERE ma_hh = '$ma_hh'";
         $products = $conn->query($select);
-        return $product = $products->fetch();
+        return $products->fetch();
+    }
+
+    function selectProductsSameKind($ma_hh){
+        global $conn;
+        $product = selectProductsId($ma_hh);
+
+        $ma_loai = $product['ma_loai'];
+        $select = "SELECT * FROM hang_hoa WHERE ma_loai = '$ma_loai'";
+        return $conn->query($select);
     }
 
     function deleteProducts($ma_hh)

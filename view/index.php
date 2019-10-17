@@ -30,6 +30,11 @@
         $view_name = 'signUp.php';
     }
 
+    else if(array_key_exists('view-product', $_REQUEST)){
+        updateCountView($ma_hh);
+        $view_name = 'viewProduct.php';
+    }
+
     else if(array_key_exists('manageAccount', $_REQUEST)){
         $user = selectMemberId($_SESSION['id']);
         $view_name = 'account/manageAccount.php';
@@ -90,11 +95,6 @@
     else if(array_key_exists('logOut', $_REQUEST)){
         logOut();
         header("Location: $VIEW_URL");
-    }
-
-    else if(array_key_exists('view-product', $_REQUEST)){
-        updateCountView($ma_hh);
-        $view_name = 'viewProduct.php';
     }
 
     else{
