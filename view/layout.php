@@ -93,6 +93,9 @@
             right: 17px;
             bottom: -20px;
         }
+        .view-pro {
+            margin-bottom: 0px !important;
+        }
     </style>
 </head>
 <body>

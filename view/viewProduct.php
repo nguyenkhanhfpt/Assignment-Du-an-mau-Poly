@@ -3,9 +3,8 @@
     $comments = selectComment($ma_hh);
 ?>
 
-<div class="card-deck mb-3">
+<div class="card-deck mb-3 view-pro">
     <div class="card mb-4 shadow-sm">
-
         <div class="card-body">
             <div class="row">
                 <img src="<?=$IMG_URL?>/<?=$product['hinh']?>" alt="" class="col-md-5">
@@ -21,7 +20,7 @@
                     <form class="d-flex">
                         <input type="hidden" value="<?=$product['ma_hh']?>" name="ma_hh">
                         <input type="number" min="1" max="99" value="1" name="quantity" class="form-control mr-3 quantity">
-                        <input type="submit" name="addCart" class="btn btn-primary">
+                        <input type="submit" value="Mua hàng" name="addCart" class="btn btn-primary">
                     </form>
                     <hr>
                     <h2><?=$product['don_gia']?> đ</h2>
@@ -58,6 +57,24 @@
                 </div>
             </div>
         <?php endforeach ?>
-
     </div>
+</div>
+
+<div class="container border shadow-sm rounded p-4">
+    <h3 class="mb-4">Sản phẩm cùng loại</h3>
+    <a href="" class="d-flex mb-3 text-decoration-none">
+        <img src="<?=$IMG_URL?>/05.jpg" class="rounded" width="80px" height="auto">
+        <p class="ml-3">Nước giải khát hương cam Fanta lon 250ml 
+            <br>
+            <span class="font-weight-bold">50 $</span>
+        </p>
+    </a>
+    <a href="" class="d-flex mb-3 text-decoration-none">
+        <img src="<?=$IMG_URL?>/05.jpg" alt="" width="80px" height="auto">
+        <p class="ml-3">Nước giải khát hương cam Fanta lon 250ml 
+            <br>
+            <span class="font-weight-bold">50 $</span>
+        </p>
+    </a>
+    
 </div>
