@@ -16,17 +16,17 @@
     }
 
     function checkAdmin($ma_kh){
-        global $conn;
+        global $ROOT_URL;
 
         if($ma_kh === NULL){
-            echo "<script>history.back()</script>";
+            header("Location: $ROOT_URL");
             return;
         }
 
         $vai_tro = role($ma_kh);
 
         if($vai_tro == 0){
-            echo "<script>history.back()</script>";
+            header("Location: $ROOT_URL");
             return;
         }         
     }
