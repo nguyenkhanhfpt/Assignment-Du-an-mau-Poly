@@ -61,7 +61,7 @@
     </div>
 </div>
 
-<div class="container border shadow-sm rounded p-4">
+<div class="container border shadow-sm rounded p-4 mb-3">
     <h3 class="mb-4">Sản phẩm cùng loại</h3>
     <?php if(isset($sameKind)) : ?>
         <?php foreach($sameKind as $product) :?>
