@@ -13,6 +13,9 @@
     <script src="https://kit.fontawesome.com/a5910b1756.js" crossorigin="anonymous"></script>
     <title>X-Shop</title>
     <style>
+        body{
+            background-color: #fefefe;
+        }
         .link{
             color: white;
             text-decoration: none;
@@ -27,9 +30,8 @@
             height: 400px;
         }
         .product{
-            width: 150px;
-            flex-grow: 1;
-            margin: 10px 17px 25px;
+            max-width: 15rem;
+            margin: 10px 0px 25px;
         }
         .img-product{
             margin-top: -1px;
@@ -96,6 +98,20 @@
         .view-pro {
             margin-bottom: 0px !important;
         }
+        .medium-4 {
+            flex: 0 0 35.33333%;
+            max-width: 19.33333%;
+            padding-right: 1.25rem;
+            padding-left: 1.25rem;
+        } 
+        @media screen and (max-width: 50em){
+            .medium-4 {
+                flex: 0 0 50%;
+                max-width: 50%;
+                padding-right: .9375rem;
+                padding-left: .9375rem;
+            } 
+        } 
     </style>
 </head>
 <body>

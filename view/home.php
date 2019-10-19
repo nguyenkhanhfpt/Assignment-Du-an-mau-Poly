@@ -35,7 +35,7 @@ $products = selectTop10();
     <div class="card mb-4 shadow-sm">
         <div class="card-body d-flex flex-wrap justify-content-start">
             <?php foreach ($products as $product) : ?>
-                <div class="product ">
+                <div class="product medium-4">
                     <a href="index.php?view-product&ma_hh=<?= $product['ma_hh'] ?>" class="text-decoration-none text-body">
                         <div class="product-title">
                             <p class="name-product"><?= $product['ten_hh'] ?></p>
