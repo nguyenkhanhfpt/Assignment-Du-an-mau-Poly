@@ -1,5 +1,5 @@
 <?php
-    $ROOT_URL = "/lab7_khanhnpd02983";
+    $ROOT_URL = "/khanhnpd02983_AS-DAM";
     $FUNC_URL = "$ROOT_URL/dao";
     $ADMIN_URL = "$ROOT_URL/admin";
     $VIEW_URL = "$ROOT_URL/view";

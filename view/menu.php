@@ -16,7 +16,8 @@
   </nav>
   <?php if(isset($_SESSION['name'])) : ?>
     <div class="user">
-      <h3><i class="fas fa-user-edit ml-2 mr-4 text-primary" id="user"></i></h3>
+      <!-- <h3><i class="fas fa-user-edit ml-2 mr-4 text-primary" id="user"></i></h3> -->
+      <img src="<?=$ROOT_URL?>/img/userAvarta.png" width='35px' id="user">
       <div id="tableUser" class="border">
         <div class="d-flex flex-column">
           <img src="<?=$ROOT_URL?>/img/<?=$user['hinh_kh']?>" class="mx-auto rounded-circle mb-2" width="50px" height="50px">

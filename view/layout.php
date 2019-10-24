@@ -54,7 +54,7 @@
             z-index: 10;
             background-color: white;
             top: 51px;
-            left: -75px;
+            left: -110px;
             padding: 10px;
         }
         #tableUser>a{
@@ -69,7 +69,7 @@
             content: "";
             position: absolute;
             top: 0;
-            left: 60%;
+            left: 80%;
             width: 1rem;
             height: 1rem;
             background-color: white;
@@ -81,7 +81,7 @@
             content: "";
             position: absolute;
             top: 0;
-            left: 60%;
+            left: 80%;
             width: 2rem;
             height: 1rem;
             background-color: white;
