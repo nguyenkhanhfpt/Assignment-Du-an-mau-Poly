@@ -34,8 +34,8 @@
       </div>
     </div>
   <?php else : ?>
-    <a class="btn btn-outline-primary mx-2" href="?signUp" id="signUp">Sign up</a>
-    <a class="btn btn-outline-primary mx-2" href="?logIn" id="logIn">Log in</a>
+    <a class="btn btn-outline-primary mx-2" href="?signUp" id="signUp">Đăng ký</a>
+    <a class="btn btn-outline-primary mx-2" href="?logIn" id="logIn">Đăng nhập</a>
   <?php endif ?>
 </div>
 
